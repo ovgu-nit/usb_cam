@@ -721,8 +721,8 @@ bool UsbCam::set_v4l_parameter(const std::string & param, const std::string & va
     pclose(stream);
     // any output should be an error
     if (output.length() > 0) {
-      std::cout << output.c_str() << std::endl;
-      retcode = 1;
+      std::cout << "Error: " << output.c_str() << std::flush;
+        retcode = 1;
     }
   } else {
     std::cerr << "usb_cam_node could not run '" << cmd.c_str() << "'" << std::endl;
